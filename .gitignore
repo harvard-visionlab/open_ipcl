@@ -1,3 +1,7 @@
+*.pth.tar
+weights/*.pth.tar
+weights/*.csv
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
