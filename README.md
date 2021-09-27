@@ -66,6 +66,21 @@ with FeatureExtractor(model, ['conv_block_1.0','conv_block_1.1','conv_block_1.2'
         
 ```        
 
+## KNN Evaluation
+
+knn_eval.py Can be used to estimate KNN classification accuracy based on model activations. Just specifiy the model_name (e.g., 'ipcl1'), the layer to be readout (e.g., 'l2norm'), and the path to the imagenet dataset:
+```
+CUDA_VISIBLE_DEVICES='0' python knn_eval.py ipcl1 l2norm --data_dir /path/to/imagenet
+```
+
+## Linear Evaluation (10 epochs)
+
+We adapted the standard linear evaluation protocol to use a one-cycle learning rate policy, enabling us to estimate linear evaluation accuracy in 10 epochs (as opposed to 100 in the standard protocol.). Just specifiy the model_name (e.g., 'ipcl1'), the layer to be readout (e.g., 'fc7'), and the path to the imagenet dataset:
+```
+CUDA_VISIBLE_DEVICES='0' python main_lincls_onecycle.py ipcl1 fc7 --data /path/to/imagenet --gpu 0
+```
+
+
 ## Train Models
 Our original training code was based on https://github.com/zhirongw/lemniscate.pytorch, but the IPCL models were slow to train (~21 days on a single Titan X Pascal). The same code runs faster on newer gpus (e.g., ~7 days on a Tesla V100). 
 
@@ -74,9 +89,9 @@ Our original training code was based on https://github.com/zhirongw/lemniscate.p
 python train_original.py --data /path/to/imagenet
 ```
 
-We found the primary bottleneck for training these models was the fact that IPCL augments each image N times (N=5 in our experiments), so we implemented custom transforms that perform augmentations on the GPU, which required a change to the colorspace conversion for color_jitter. These models train almost twice as fast (~11 days on a single Titan X Pascal gpu; ~4 days on a Tesla V100), and fit neural data equally well, but perform slightly less accurately on Imagenet Classification (e.g., knn accurcy = 39.3% with torchvision transforms, and 32.8% with custom transforms).  
+We found the primary bottleneck for training these models was the fact that IPCL augments each image N times (N=5 in our experiments), so we implemented custom transforms that perform augmentations on the GPU, which required a change to the colorspace conversion for color_jitter (emulating NVIDIA DALI's color jitter [source](https://github.com/NVIDIA/DALI/blob/5b9f9d72056239bcc7df9daa1626a9fe34af7e43/dali/operators/image/color/hsv.h). These models train almost twice as fast (~11 days on a single Titan X Pascal gpu; ~4 days on a Tesla V100), and fit neural data equally well, but perform slightly less accurately on Imagenet Classification (e.g., knn accurcy = 39.3% with torchvision transforms, and 32.8% with custom transforms).  
 
-***train ipcl_alexnet_gn with faster augmentations (warning could be slow)***
+***train ipcl_alexnet_gn with faster augmentations (faster, but less performant models)***
 ```
 python train_orginal_fastaug.py --data /path/to/imagenet
 ```
