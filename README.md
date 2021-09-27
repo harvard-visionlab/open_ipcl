@@ -89,7 +89,7 @@ Our original training code was based on https://github.com/zhirongw/lemniscate.p
 python train_original.py --data /path/to/imagenet
 ```
 
-We found the primary bottleneck for training these models was the fact that IPCL augments each image N times (N=5 in our experiments), so we implemented custom transforms that perform augmentations on the GPU, which required a change to the colorspace conversion for color_jitter (emulating NVIDIA DALI's color jitter [source](https://github.com/NVIDIA/DALI/blob/5b9f9d72056239bcc7df9daa1626a9fe34af7e43/dali/operators/image/color/hsv.h). These models train almost twice as fast (~11 days on a single Titan X Pascal gpu; ~4 days on a Tesla V100), and fit neural data equally well, but perform slightly less accurately on Imagenet Classification (e.g., knn accurcy = 39.3% with torchvision transforms, and 32.8% with custom transforms).  
+We found the primary bottleneck for training these models was the fact that IPCL augments each image N times (N=5 in our experiments), so we implemented custom transforms that perform augmentations on the GPU, which required a change to the colorspace conversion for color_jitter (emulating [NVIDIA DALI's color jitter] (https://github.com/NVIDIA/DALI/blob/5b9f9d72056239bcc7df9daa1626a9fe34af7e43/dali/operators/image/color/hsv.h). These models train almost twice as fast (~11 days on a single Titan X Pascal gpu; ~4 days on a Tesla V100), and fit neural data equally well, but perform slightly less accurately on Imagenet Classification (e.g., knn accurcy = 39.3% with torchvision transforms, and 32.8% with custom transforms).  
 
 ***train ipcl_alexnet_gn with faster augmentations (faster, but less performant models)***
 ```
