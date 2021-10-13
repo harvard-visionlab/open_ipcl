@@ -43,7 +43,7 @@ sys.path.append(str(root))
 from torch.utils.data import DataLoader
 import models
 
-from lib.knn_monitor import run_kNN_chunky as run_kNN
+from lib.knn import run_kNN_chunky as run_kNN
 
 from fastscript import *
 

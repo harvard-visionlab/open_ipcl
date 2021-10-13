@@ -82,16 +82,16 @@ CUDA_VISIBLE_DEVICES='0' python main_lincls_onecycle.py ipcl1 fc7 --data /path/t
 
 
 ## Train Models
-Our original training code was based on https://github.com/zhirongw/lemniscate.pytorch, but the IPCL models were slow to train (~21 days on a single Titan X Pascal). The same code runs faster on newer gpus (e.g., ~7 days on a Tesla V100). 
+Our original training code was based on https://github.com/zhirongw/lemniscate.pytorch, but the IPCL models were slow to train (~21 days on a single Titan X Pascal). The same code runs faster on newer gpus (e.g., ~7 days on a Tesla V100). For updated code and faster model training use train_ipcl.py (see below).
 
 ***replicate original ipcl_alexnet_gn model (warning could be slow, unless you have a Tesla V100)***
 ```
 python train_original.py --data /path/to/imagenet
 ```
 
-We found the primary bottleneck for training these models was the fact that IPCL augments each image N times (N=5 in our experiments), so we implemented custom transforms that perform augmentations on the GPU, which required a change to the colorspace conversion for color_jitter, emulating [NVIDIA DALIs color jitter](https://github.com/NVIDIA/DALI/blob/5b9f9d72056239bcc7df9daa1626a9fe34af7e43/dali/operators/image/color/hsv.h). These models train almost twice as fast (~11 days on a single Titan X Pascal gpu; ~4 days on a Tesla V100), and fit neural data equally well, but perform slightly less accurately on Imagenet Classification (e.g., knn accurcy = 39.3% with torchvision transforms, and 32.8% with custom transforms).  
+We found the primary bottleneck for training these models was the fact that IPCL augments each image N times (N=5 in our experiments), so we implemented custom transforms that perform augmentations on the GPU. These models train almost twice as fast (~11 days on a single Titan X Pascal gpu; ~4 days on a Tesla V100), and perform as well on imagenet classification (we have not tested these newer models for correspondence with neural responses).
 
-***train ipcl_alexnet_gn with faster augmentations (faster training, but less performant models)***
+***train ipcl_alexnet_gn with faster augmentations (faster training, equally performant models)***
 ```
-python train_orginal_fastaug.py --data /path/to/imagenet
+python train_ipcl.py -a alexnet_gn /path/to/imagenet
 ```
