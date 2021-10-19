@@ -82,7 +82,7 @@ CUDA_VISIBLE_DEVICES='0' python main_lincls_onecycle.py ipcl1 fc7 --data /path/t
 
 
 ## Train Models
-Our original training code was based on https://github.com/zhirongw/lemniscate.pytorch, but the IPCL models were slow to train (~21 days on a single Titan X Pascal). The same code runs faster on newer gpus (e.g., ~7 days on a Tesla V100). For updated code and faster model training use train_ipcl.py (see below).
+Our original training code was based on https://github.com/zhirongw/lemniscate.pytorch, but the IPCL models were slow to train (~21 days on a single Titan X Pascal). The same code runs faster on newer gpus (e.g., ~7 days on a Tesla V100), but is included here only for reference. For updated code and faster model training use train_ipcl.py (see below).
 
 ***replicate original ipcl_alexnet_gn model (warning could be slow, unless you have a Tesla V100)***
 ```
