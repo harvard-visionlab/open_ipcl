@@ -5,6 +5,16 @@
   <img src="images/ipcl.png" width="60%" title="ipcl">
 </p>
 
+```
+@article{konkle2021beyond,
+  title={Beyond category-supervision: instance-level contrastive learning models predict human visual system responses to objects},
+  author={Konkle, Talia and Alvarez, George A},
+  journal={bioRxiv},
+  year={2021},
+  publisher={Cold Spring Harbor Laboratory}
+}
+```
+
 ## Load Pretrained Models
 
 Models are numbered to align with Supplementary Table 1 in our paper [bioRxiv](https://www.biorxiv.org/content/10.1101/2021.05.28.446118v1.full). For example, to load a self-supervised model, trained with IPCL:
