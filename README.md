@@ -16,7 +16,7 @@
 ```
 
 ## System Requirements
-This code has been tested with python=3.6, and PyTorch v1.7 and 1.9. See conda_env.ipynb for notes on environment setup, or use the environment.yml file to install dependencies.
+This code has been tested with python=3.6, and PyTorch v1.7 and 1.9. See conda_env.ipynb for notes on environment setup, or use the environment.yml file to install a new conda environment with all dependencies.
 
 ## Load Pretrained Models
 
