@@ -15,6 +15,9 @@
 }
 ```
 
+## System Requirements
+This code has been tested with python=3.6, and PyTorch v1.7 and 1.9. See conda_env.ipynb for notes on environment setup, or use the environment.yml file to install dependencies.
+
 ## Load Pretrained Models
 
 Models are numbered to align with Supplementary Table 1 in our paper [bioRxiv](https://www.biorxiv.org/content/10.1101/2021.05.28.446118v1.full). For example, to load a self-supervised model, trained with IPCL:
