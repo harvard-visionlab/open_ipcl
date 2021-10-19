@@ -95,3 +95,7 @@ We found the primary bottleneck for training these models was the fact that IPCL
 ```
 python train_ipcl.py -a alexnet_gn /path/to/imagenet
 ```
+
+### License
+
+This project is released under MIT License, which allows commercial use. See [LICENSE](LICENSE) for details.
