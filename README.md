@@ -1,5 +1,5 @@
 # open_ipcl
- PyTorch implementation and pretrained models for IPCL (instance-prototype contrastive learning). For details see **Beyond category-supervision: instance-level contrastive learning models predict human visual system responses to objects** [[bioRxiv]](https://www.biorxiv.org/content/10.1101/2021.05.28.446118v1.full)
+ PyTorch implementation and pretrained models for IPCL (instance-prototype contrastive learning). For details see **Beyond category-supervision: Computational support for domain-general pressures guiding human visual system representation** [[bioRxiv]](https://www.biorxiv.org/content/10.1101/2020.06.15.153247v2)
 
 <p align="center">
   <img src="images/ipcl.png" width="60%" title="ipcl">
@@ -7,7 +7,7 @@
 
 ```
 @article{konkle2021beyond,
-  title={Beyond category-supervision: instance-level contrastive learning models predict human visual system responses to objects},
+  title={Beyond category-supervision: Computational support for domain-general pressures guiding human visual system representation},
   author={Konkle, Talia and Alvarez, George A},
   journal={bioRxiv},
   year={2021},
