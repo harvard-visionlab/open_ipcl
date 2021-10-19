@@ -1,4 +1,7 @@
 '''
+
+Copied from https://github.com/CSAILVision/gandissect/blob/master/netdissect/nethook.py
+
 Utilities for instrumenting a torch model.
 
 InstrumentedModel will wrap a pytorch model and allow hooking
