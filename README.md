@@ -1,5 +1,5 @@
 # open_ipcl
- PyTorch implementation and pretrained models for IPCL (instance-prototype contrastive learning). For details see **Beyond category-supervision: Computational support for domain-general pressures guiding human visual system representation** [[bioRxiv]](https://www.biorxiv.org/content/10.1101/2020.06.15.153247v2)
+ PyTorch implementation and pretrained models for IPCL (instance-prototype contrastive learning). For details see **Beyond category-supervision: Computational support for domain-general pressures guiding human visual system representation** [[bioRxiv]](https://www.biorxiv.org/content/10.1101/2020.06.15.153247v3)
 
 <p align="center">
   <img src="images/ipcl.png" width="60%" title="ipcl">
