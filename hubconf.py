@@ -9,7 +9,8 @@ dependencies = ['torch', 'torchvision']
 
 _doc ="""Official ipcl imagenet model from the paper `A self-supervised domain-general learning framework for human ventral stream representation <https://github.com/grez72/publications/blob/master/pdfs/Konkle_et_al-2022-Nature_Communications.pdf>`.    
     
-    This model instance corresponds to Supplementary Table {} {}.        
+    This model instance corresponds to Supplementary Table {}, {}. 
+        - {}
     
     Args:
         pretrained (bool): whether to load pre-trained weights
@@ -156,4 +157,150 @@ def alexnetgn_ipcl_ref5(pretrained=True, **kwargs):
     transform = _transform(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     
     return model, transform
+
+@_docstring_parameter(_doc.format("Ref#6","(alexnet_gn trained on imagenet with IPCL; visual-diet variation set)","trained with reduced range of random-resize-crop range"))
+def alexnetgn_ipcl_diet_imagenet_ref6(pretrained=True, **kwargs):
+    """{0}"""
+    
+    model = _alexnet_gn(out_dim=128, l2norm=True, **kwargs)
+          
+    if pretrained:
+        checkpoint_name = "alexnet_gn_u128_imagenet_final_weights_only.pth.tar"
+        cache_file_name = "alexnetgn_ipcl_diet_imagenet_ref6-fc6efe7bec.pth.tar"
+        checkpoint = torch.hub.load_state_dict_from_url(
+            url=f'https://visionlab-pretrainedmodels.s3.amazonaws.com/project_instancenet/ipcl/{checkpoint_name}', 
+            map_location='cpu',
+            file_name=cache_file_name,
+            check_hash=True
+        )
+        state_dict = {str.replace(k,'module.',''): v for k,v in checkpoint['state_dict'].items()}
+        model.load_state_dict(state_dict, strict=True)
+        model.hashid = 'fc6efe7bec'
+        model.weights_file = os.path.join(torch.hub.get_dir(), "checkpoints", cache_file_name)
+    
+    transform = _transform(mean=[0.5, 0.5, 0.5], std=[0.2, 0.2, 0.2])
+    
+    return model, transform
+
+@_docstring_parameter(_doc.format("Ref#7","(alexnet_gn trained on OpenImagesV6 with IPCL; visual-diet variation set)","trained with reduced range of random-resize-crop range"))
+def alexnetgn_ipcl_diet_openimagesv6_ref7(pretrained=True, **kwargs):
+    """{0}"""
+    
+    model = _alexnet_gn(out_dim=128, l2norm=True, **kwargs)
+          
+    if pretrained:
+        checkpoint_name = "alexnet_gn_u128_openimagesv6_final_weights_only.pth.tar"
+        cache_file_name = "alexnetgn_ipcl_diet_openimagesv6_ref7-79a120b915.pth.tar"
+        checkpoint = torch.hub.load_state_dict_from_url(
+            url=f'https://visionlab-pretrainedmodels.s3.amazonaws.com/project_instancenet/ipcl/{checkpoint_name}', 
+            map_location='cpu',
+            file_name=cache_file_name,
+            check_hash=True
+        )
+        state_dict = {str.replace(k,'module.',''): v for k,v in checkpoint['state_dict'].items()}
+        model.load_state_dict(state_dict, strict=True)
+        model.hashid = '79a120b915'
+        model.weights_file = os.path.join(torch.hub.get_dir(), "checkpoints", cache_file_name)
+    
+    transform = _transform(mean=[0.5, 0.5, 0.5], std=[0.2, 0.2, 0.2])
+    
+    return model, transform
+
+@_docstring_parameter(_doc.format("Ref#8","(alexnet_gn trained on Places2 with IPCL; visual-diet variation set)","trained with reduced range of random-resize-crop range"))
+def alexnetgn_ipcl_diet_places2_ref8(pretrained=True, **kwargs):
+    """{0}"""
+    
+    model = _alexnet_gn(out_dim=128, l2norm=True, **kwargs)
+          
+    if pretrained:
+        checkpoint_name = "alexnet_gn_u128_places2_final_weights_only.pth.tar"
+        cache_file_name = "alexnetgn_ipcl_diet_places2_ref8-343c15875d.pth.tar"
+        checkpoint = torch.hub.load_state_dict_from_url(
+            url=f'https://visionlab-pretrainedmodels.s3.amazonaws.com/project_instancenet/ipcl/{checkpoint_name}', 
+            map_location='cpu',
+            file_name=cache_file_name,
+            check_hash=True
+        )
+        state_dict = {str.replace(k,'module.',''): v for k,v in checkpoint['state_dict'].items()}
+        model.load_state_dict(state_dict, strict=True)
+        model.hashid = '343c15875d'
+        model.weights_file = os.path.join(torch.hub.get_dir(), "checkpoints", cache_file_name)
+    
+    transform = _transform(mean=[0.5, 0.5, 0.5], std=[0.2, 0.2, 0.2])
+    
+    return model, transform
+
+@_docstring_parameter(_doc.format("Ref#9","(alexnet_gn trained on VGGFace2 with IPCL; visual-diet variation set)","trained with reduced range of random-resize-crop range"))
+def alexnetgn_ipcl_diet_vggface2_ref9(pretrained=True, **kwargs):
+    """{0}"""
+    
+    model = _alexnet_gn(out_dim=128, l2norm=True, **kwargs)
+          
+    if pretrained:
+        checkpoint_name = "alexnet_gn_u128_vggface2_lr001_final_weights_only.pth.tar"
+        cache_file_name = "alexnetgn_ipcl_diet_vggface2_ref9-23ef0936c4.pth.tar"
+        checkpoint = torch.hub.load_state_dict_from_url(
+            url=f'https://visionlab-pretrainedmodels.s3.amazonaws.com/project_instancenet/ipcl/{checkpoint_name}', 
+            map_location='cpu',
+            file_name=cache_file_name,
+            check_hash=True
+        )
+        state_dict = {str.replace(k,'module.',''): v for k,v in checkpoint['state_dict'].items()}
+        model.load_state_dict(state_dict, strict=True)
+        model.hashid = '23ef0936c4'
+        model.weights_file = os.path.join(torch.hub.get_dir(), "checkpoints", cache_file_name)
+    
+    transform = _transform(mean=[0.5, 0.5, 0.5], std=[0.2, 0.2, 0.2])
+    
+    return model, transform
+
+@_docstring_parameter(_doc.format("Ref#9","(alexnet_gn trained on FacesPlacesObjects1281167 with IPCL; visual-diet variation set)","trained with reduced range of random-resize-crop range"))
+def alexnetgn_ipcl_diet_FacesPlacesObjects1281167_ref10(pretrained=True, **kwargs):
+    """{0}"""
+    
+    model = _alexnet_gn(out_dim=128, l2norm=True, **kwargs)
+          
+    if pretrained:
+        checkpoint_name = "alexnet_gn_u128_FacesPlacesObjects1281167_final_weights_only.pth.tar"
+        cache_file_name = "alexnetgn_ipcl_diet_FacesPlacesObjects1281167_ref10-25e539c255.pth.tar"
+        checkpoint = torch.hub.load_state_dict_from_url(
+            url=f'https://visionlab-pretrainedmodels.s3.amazonaws.com/project_instancenet/ipcl/{checkpoint_name}', 
+            map_location='cpu',
+            file_name=cache_file_name,
+            check_hash=True
+        )
+        state_dict = {str.replace(k,'module.',''): v for k,v in checkpoint['state_dict'].items()}
+        model.load_state_dict(state_dict, strict=True)
+        model.hashid = '25e539c255'
+        model.weights_file = os.path.join(torch.hub.get_dir(), "checkpoints", cache_file_name)
+    
+    transform = _transform(mean=[0.5, 0.5, 0.5], std=[0.2, 0.2, 0.2])
+    
+    return model, transform
+
+@_docstring_parameter(_doc.format("Ref#10","(alexnet_gn trained on FacesPlacesObjects1281167 with IPCL; visual-diet variation set)","trained with reduced range of random-resize-crop range"))
+def alexnetgn_ipcl_diet_FacesPlacesObjects1281167x3_ref11(pretrained=True, **kwargs):
+    """{0}"""
+    
+    model = _alexnet_gn(out_dim=128, l2norm=True, **kwargs)
+          
+    if pretrained:
+        checkpoint_name = "alexnet_gn_u128_FacesPlacesObjects1281167x3_final_weights_only.pth.tar"
+        cache_file_name = "alexnetgn_ipcl_diet_FacesPlacesObjects1281167x3_ref11-af6119b74a.pth.tar"
+        checkpoint = torch.hub.load_state_dict_from_url(
+            url=f'https://visionlab-pretrainedmodels.s3.amazonaws.com/project_instancenet/ipcl/{checkpoint_name}', 
+            map_location='cpu',
+            file_name=cache_file_name,
+            check_hash=True
+        )
+        state_dict = {str.replace(k,'module.',''): v for k,v in checkpoint['state_dict'].items()}
+        model.load_state_dict(state_dict, strict=True)
+        model.hashid = 'af6119b74a'
+        model.weights_file = os.path.join(torch.hub.get_dir(), "checkpoints", cache_file_name)
+    
+    transform = _transform(mean=[0.5, 0.5, 0.5], std=[0.2, 0.2, 0.2])
+    
+    return model, transform
+
+
   
