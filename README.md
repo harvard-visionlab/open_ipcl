@@ -37,7 +37,7 @@ model, transform = torch.hub.load("harvard-visionlab/open_ipcl", "alexnetgn_ipcl
 model, transform = torch.hub.load("harvard-visionlab/open_ipcl", "alexnetgn_ipcl_ref05")
 ```
 
-We trained IPCL models on different datasets. This required using an autmentation scheme with less extreme random-resized-crop (to prevent cropping faces too closely). These models generally performed less well on imagenet linear classification:
+We trained IPCL models on different datasets. All of these models were trained with a less extreme random-resized-crop range (to prevent cropping faces too closely, and to allow a fair comparison acroos all datasets). These models generally performed less well on imagenet linear classification:
 ```
 import torch
 model, transform = torch.hub.load("harvard-visionlab/open_ipcl", "alexnetgn_ipcl_ref06_diet_imagenet")
