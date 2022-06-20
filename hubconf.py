@@ -38,7 +38,7 @@ def alexnetgn_ipcl_ref1(pretrained=True, **kwargs):
         checkpoint = torch.hub.load_state_dict_from_url(
             url=f'https://visionlab-pretrainedmodels.s3.amazonaws.com/project_instancenet/ipcl/{checkpoint_name}', 
             map_location='cpu',
-            filename=cache_file_name,
+            file_name=cache_file_name,
             check_hash=True
         )
         state_dict = {str.replace(k,'module.',''): v for k,v in checkpoint['state_dict'].items()}
