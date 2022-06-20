@@ -42,7 +42,8 @@ def _transform(resize=256, crop_size=224, mean=[0.485, 0.456, 0.406], std=[0.229
 #  Official models from published paper
 # -------------------------------------------------
 
-@_docstring_parameter(_doc.format("Ref#1","(alexnet_gn trained on imagenet with instance-prototype-contrastive learning; IPCL)",""))
+@_docstring_parameter(_doc.format("Ref#1","(alexnet_gn trained on imagenet with instance-prototype-contrastive learning; IPCL)",
+                                  "primary model"))
 def alexnetgn_ipcl_ref01(pretrained=True, **kwargs):
     """{0}"""
     
@@ -66,7 +67,8 @@ def alexnetgn_ipcl_ref01(pretrained=True, **kwargs):
     
     return model, transform
 
-@_docstring_parameter(_doc.format("Ref#2","(alexnet_gn trained on imagenet with instance-prototype-contrastive learning; IPCL)",""))
+@_docstring_parameter(_doc.format("Ref#2","(alexnet_gn trained on imagenet with instance-prototype-contrastive learning; IPCL)",
+                                  "variation: new code base"))
 def alexnetgn_ipcl_ref02(pretrained=True, **kwargs):
     """{0}"""
     
@@ -90,7 +92,8 @@ def alexnetgn_ipcl_ref02(pretrained=True, **kwargs):
     
     return model, transform
 
-@_docstring_parameter(_doc.format("Ref#3","(alexnet_gn trained on imagenet with instance-prototype-contrastive learning; IPCL)",""))
+@_docstring_parameter(_doc.format("Ref#3","(alexnet_gn trained on imagenet with instance-prototype-contrastive learning; IPCL)",
+                                  "variation: one cycle lr & momentum (73 epochs)"))
 def alexnetgn_ipcl_ref03(pretrained=True, **kwargs):
     """{0}"""
     
@@ -114,7 +117,8 @@ def alexnetgn_ipcl_ref03(pretrained=True, **kwargs):
     
     return model, transform
 
-@_docstring_parameter(_doc.format("Ref#4","(alexnet_gn trained on imagenet with instance-prototype-contrastive learning; IPCL)",""))
+@_docstring_parameter(_doc.format("Ref#4","(alexnet_gn trained on imagenet with instance-prototype-contrastive learning; IPCL)",
+                                  "variation: explore ranger optimizer (82 epochs)"))
 def alexnetgn_ipcl_ref04(pretrained=True, **kwargs):
     """{0}"""
     
@@ -138,7 +142,8 @@ def alexnetgn_ipcl_ref04(pretrained=True, **kwargs):
     
     return model, transform
 
-@_docstring_parameter(_doc.format("Ref#5","(alexnet_gn trained on imagenet with instance-prototype-contrastive learning; IPCL)",""))
+@_docstring_parameter(_doc.format("Ref#5","(alexnet_gn trained on imagenet with instance-prototype-contrastive learning; IPCL)",
+                                  "variation: custom transforms (82 epochs)"))
 def alexnetgn_ipcl_ref05(pretrained=True, **kwargs):
     """{0}"""
     
