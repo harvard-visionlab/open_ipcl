@@ -9,7 +9,7 @@ dependencies = ['torch', 'torchvision']
 
 _doc ="""Official ipcl imagenet model from the paper `A self-supervised domain-general learning framework for human ventral stream representation <https://github.com/grez72/publications/blob/master/pdfs/Konkle_et_al-2022-Nature_Communications.pdf>`.    
     
-    This model instance corresponds to Supplementary Table %s %s.        
+    This model instance corresponds to Supplementary Table {} {}.        
     
     Args:
         pretrained (bool): whether to load pre-trained weights
@@ -18,6 +18,13 @@ _doc ="""Official ipcl imagenet model from the paper `A self-supervised domain-g
         transform: the validation transforms needed to pre-process images
         
     """
+
+def _docstring_parameter(*sub):
+    def dec(obj):
+        obj.__doc__ = obj.__doc__.format(*sub)
+        return obj
+    return dec
+
 
 def _transform(resize=256, crop_size=224, mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]):
     transform = torchvision.transforms.Compose([
@@ -62,10 +69,11 @@ def alexnetgn_ipcl_ref1(pretrained=True, **kwargs):
     
     return model, transform
 
+@docstring_parameter(_doc.format("Ref#2","(alexnet_gn trained on imagenet with instance-prototype-contrastive learning; IPCL)"))
 def alexnetgn_ipcl_ref2(pretrained=True, **kwargs):
-    f"""{_doc}"""
+    """{0}"""
     
-    model = _alexnet_gn(out_dim=128, l2norm=True)
+    model = _alexnet_gn(out_dim=128, l2norm=True, **kwargs)
           
     if pretrained:
         checkpoint_name = "06_instance_imagenet_AlexNet_n5_lr03_pct40_t07_div1000_e100_bs128_bm20_gn_rep2_final_weights_only.pth.tar"
