@@ -383,7 +383,7 @@ def alexnetgn_supervised_augset2_ref14(pretrained=True, **kwargs):
         model.hashid = 'f9c1603f16'
         model.weights_file = os.path.join(torch.hub.get_dir(), "checkpoints", cache_file_name)
     
-    transform = _transform(mean=[0.5, 0.5, 0.5]], std=[0.2, 0.2, 0.2])
+    transform = _transform(mean=[0.5, 0.5, 0.5], std=[0.2, 0.2, 0.2])
     
     return model, transform
 
@@ -408,7 +408,7 @@ def alexnetgn_supervised_augset2_rep1_ref15(pretrained=True, **kwargs):
         model.hashid = '5b19b17783'
         model.weights_file = os.path.join(torch.hub.get_dir(), "checkpoints", cache_file_name)
     
-    transform = _transform(mean=[0.5, 0.5, 0.5]], std=[0.2, 0.2, 0.2])
+    transform = _transform(mean=[0.5, 0.5, 0.5], std=[0.2, 0.2, 0.2])
     
     return model, transform
 
