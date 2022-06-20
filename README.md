@@ -37,7 +37,7 @@ model, transform = torch.hub.load("harvard-visionlab/open_ipcl", "alexnetgn_ipcl
 model, transform = torch.hub.load("harvard-visionlab/open_ipcl", "alexnetgn_ipcl_ref05")
 ```
 
-We trained IPCL models on different datsets, using a differet augmentation scheme (to make a fair comparison across datasets). These models generally performed less well on imagenet linear classification:
+We trained IPCL models on different datasets, using a differet augmentation scheme (to make a fair comparison across datasets). These models generally performed less well on imagenet linear classification:
 ```
 import torch
 model, transform = torch.hub.load("harvard-visionlab/open_ipcl", "alexnetgn_ipcl_ref06_diet_imagenet")
