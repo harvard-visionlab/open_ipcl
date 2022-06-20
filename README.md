@@ -28,7 +28,7 @@ import torch
 model, transform = torch.hub.load("harvard-visionlab/open_ipcl", "alexnetgn_ipcl_ref01")
 ```
 
-load one of several IPCL replications, with variations in code-base and training recipe:
+load one of several IPCL replications, with variations in code-base and training recipe (these variations had little impact on linear readout, or fit to neural responses):
 ```
 import torch
 model, transform = torch.hub.load("harvard-visionlab/open_ipcl", "alexnetgn_ipcl_ref02")
