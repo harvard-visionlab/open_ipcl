@@ -63,7 +63,7 @@ def alexnetgn_ipcl_ref1(pretrained=True, **kwargs):
     return model, transform
 
 def alexnetgn_ipcl_ref2(pretrained=True, **kwargs):
-    f"""{_doc.format('Ref#2', '(alexnet_gn trained on imagenet with instance-prototype-contrastive learning; IPCL)'}"""
+    f"""{_doc.format('Ref#2', '(alexnet_gn trained on imagenet with instance-prototype-contrastive learning; IPCL)')}"""
     
     model = _alexnet_gn(out_dim=128, l2norm=True)
           
