@@ -164,14 +164,14 @@ def alexnetgn_ipcl_ref5(pretrained=True, **kwargs):
 
 @_docstring_parameter(_doc.format("Ref#6","(alexnet_gn trained on imagenet with IPCL; visual-diet variation set)",
                                   "trained with reduced range of random-resize-crop range"))
-def alexnetgn_ipcl_diet_imagenet_ref6(pretrained=True, **kwargs):
+def alexnetgn_ipcl_ref6_diet_imagenet(pretrained=True, **kwargs):
     """{0}"""
     
     model = _alexnet_gn(out_dim=128, l2norm=True, **kwargs)
           
     if pretrained:
         checkpoint_name = "alexnet_gn_u128_imagenet_final_weights_only.pth.tar"
-        cache_file_name = "alexnetgn_ipcl_diet_imagenet_ref6-fc6efe7bec.pth.tar"
+        cache_file_name = "alexnetgn_ipcl_ref6_diet_imagenet-fc6efe7bec.pth.tar"
         checkpoint = torch.hub.load_state_dict_from_url(
             url=f'https://visionlab-pretrainedmodels.s3.amazonaws.com/project_instancenet/ipcl/{checkpoint_name}', 
             map_location='cpu',
@@ -189,14 +189,14 @@ def alexnetgn_ipcl_diet_imagenet_ref6(pretrained=True, **kwargs):
 
 @_docstring_parameter(_doc.format("Ref#7","(alexnet_gn trained on OpenImagesV6 with IPCL; visual-diet variation set)",
                                   "trained with reduced range of random-resize-crop range"))
-def alexnetgn_ipcl_diet_openimagesv6_ref7(pretrained=True, **kwargs):
+def alexnetgn_ipcl_ref7_diet_openimagesv6(pretrained=True, **kwargs):
     """{0}"""
     
     model = _alexnet_gn(out_dim=128, l2norm=True, **kwargs)
           
     if pretrained:
         checkpoint_name = "alexnet_gn_u128_openimagesv6_final_weights_only.pth.tar"
-        cache_file_name = "alexnetgn_ipcl_diet_openimagesv6_ref7-79a120b915.pth.tar"
+        cache_file_name = "alexnetgn_ipcl_ref7_diet_openimagesv6-79a120b915.pth.tar"
         checkpoint = torch.hub.load_state_dict_from_url(
             url=f'https://visionlab-pretrainedmodels.s3.amazonaws.com/project_instancenet/ipcl/{checkpoint_name}', 
             map_location='cpu',
@@ -214,14 +214,14 @@ def alexnetgn_ipcl_diet_openimagesv6_ref7(pretrained=True, **kwargs):
 
 @_docstring_parameter(_doc.format("Ref#8","(alexnet_gn trained on Places2 with IPCL; visual-diet variation set)",
                                   "trained with reduced range of random-resize-crop range"))
-def alexnetgn_ipcl_diet_places2_ref8(pretrained=True, **kwargs):
+def alexnetgn_ipcl_ref8_diet_places2(pretrained=True, **kwargs):
     """{0}"""
     
     model = _alexnet_gn(out_dim=128, l2norm=True, **kwargs)
           
     if pretrained:
         checkpoint_name = "alexnet_gn_u128_places2_final_weights_only.pth.tar"
-        cache_file_name = "alexnetgn_ipcl_diet_places2_ref8-343c15875d.pth.tar"
+        cache_file_name = "alexnetgn_ipcl_ref8_diet_places2-343c15875d.pth.tar"
         checkpoint = torch.hub.load_state_dict_from_url(
             url=f'https://visionlab-pretrainedmodels.s3.amazonaws.com/project_instancenet/ipcl/{checkpoint_name}', 
             map_location='cpu',
@@ -239,14 +239,14 @@ def alexnetgn_ipcl_diet_places2_ref8(pretrained=True, **kwargs):
 
 @_docstring_parameter(_doc.format("Ref#9","(alexnet_gn trained on VGGFace2 with IPCL; visual-diet variation set)",
                                   "trained with reduced range of random-resize-crop range"))
-def alexnetgn_ipcl_diet_vggface2_ref9(pretrained=True, **kwargs):
+def alexnetgn_ipcl_ref9_diet_vggface2(pretrained=True, **kwargs):
     """{0}"""
     
     model = _alexnet_gn(out_dim=128, l2norm=True, **kwargs)
           
     if pretrained:
         checkpoint_name = "alexnet_gn_u128_vggface2_lr001_final_weights_only.pth.tar"
-        cache_file_name = "alexnetgn_ipcl_diet_vggface2_ref9-23ef0936c4.pth.tar"
+        cache_file_name = "alexnetgn_ipcl_ref9_diet_vggface2-23ef0936c4.pth.tar"
         checkpoint = torch.hub.load_state_dict_from_url(
             url=f'https://visionlab-pretrainedmodels.s3.amazonaws.com/project_instancenet/ipcl/{checkpoint_name}', 
             map_location='cpu',
@@ -264,14 +264,14 @@ def alexnetgn_ipcl_diet_vggface2_ref9(pretrained=True, **kwargs):
 
 @_docstring_parameter(_doc.format("Ref#10","(alexnet_gn trained on FacesPlacesObjects1281167 with IPCL; visual-diet variation set)",
                                   "trained with reduced range of random-resize-crop range"))
-def alexnetgn_ipcl_diet_FacesPlacesObjects1281167_ref10(pretrained=True, **kwargs):
+def alexnetgn_ipcl_ref10_diet_FacesPlacesObjects1281167(pretrained=True, **kwargs):
     """{0}"""
     
     model = _alexnet_gn(out_dim=128, l2norm=True, **kwargs)
           
     if pretrained:
         checkpoint_name = "alexnet_gn_u128_FacesPlacesObjects1281167_final_weights_only.pth.tar"
-        cache_file_name = "alexnetgn_ipcl_diet_FacesPlacesObjects1281167_ref10-25e539c255.pth.tar"
+        cache_file_name = "alexnetgn_ipcl_ref10_diet_FacesPlacesObjects1281167-25e539c255.pth.tar"
         checkpoint = torch.hub.load_state_dict_from_url(
             url=f'https://visionlab-pretrainedmodels.s3.amazonaws.com/project_instancenet/ipcl/{checkpoint_name}', 
             map_location='cpu',
@@ -289,14 +289,14 @@ def alexnetgn_ipcl_diet_FacesPlacesObjects1281167_ref10(pretrained=True, **kwarg
 
 @_docstring_parameter(_doc.format("Ref#11","(alexnet_gn trained on FacesPlacesObjects1281167 with IPCL; visual-diet variation set)",
                                   "trained with reduced range of random-resize-crop range"))
-def alexnetgn_ipcl_diet_FacesPlacesObjects1281167x3_ref11(pretrained=True, **kwargs):
+def alexnetgn_ipcl_ref11_diet_FacesPlacesObjects1281167x3(pretrained=True, **kwargs):
     """{0}"""
     
     model = _alexnet_gn(out_dim=128, l2norm=True, **kwargs)
           
     if pretrained:
         checkpoint_name = "alexnet_gn_u128_FacesPlacesObjects1281167x3_final_weights_only.pth.tar"
-        cache_file_name = "alexnetgn_ipcl_diet_FacesPlacesObjects1281167x3_ref11-af6119b74a.pth.tar"
+        cache_file_name = "alexnetgn_ipcl_ref11_diet_FacesPlacesObjects1281167x3-af6119b74a.pth.tar"
         checkpoint = torch.hub.load_state_dict_from_url(
             url=f'https://visionlab-pretrainedmodels.s3.amazonaws.com/project_instancenet/ipcl/{checkpoint_name}', 
             map_location='cpu',
@@ -314,14 +314,14 @@ def alexnetgn_ipcl_diet_FacesPlacesObjects1281167x3_ref11(pretrained=True, **kwa
 
 @_docstring_parameter(_doc.format("Ref#12","(alexnet_gn trained on imagenet with category-supervision)",
                                   "trained with 5 augmentations per image to match IPCL, Aug Set 1"))
-def alexnetgn_supervised_augset1_5x_ref12(pretrained=True, **kwargs):
+def alexnetgn_supervised_ref12_augset1_5x(pretrained=True, **kwargs):
     """{0}"""
     
     model = _alexnet_gn(out_dim=1000, l2norm=False, **kwargs)
           
     if pretrained:
         checkpoint_name = "alexnet_gn_s1000_imagenet_wus_aug_final_weights_only.pth.tar"
-        cache_file_name = "alexnetgn_supervised_augset1_5x_ref12-3a41dd57b4.pth.tar"
+        cache_file_name = "alexnetgn_supervised_ref12_augset1_5x-3a41dd57b4.pth.tar"
         checkpoint = torch.hub.load_state_dict_from_url(
             url=f'https://visionlab-pretrainedmodels.s3.amazonaws.com/project_instancenet/ipcl/{checkpoint_name}', 
             map_location='cpu',
@@ -339,14 +339,14 @@ def alexnetgn_supervised_augset1_5x_ref12(pretrained=True, **kwargs):
 
 @_docstring_parameter(_doc.format("Ref#13","(alexnet_gn trained on imagenet with category-supervision)",
                                   "trained with standard single augmentation per image, Aug Set 1"))
-def alexnetgn_supervised_augset1_1x_ref13(pretrained=True, **kwargs):
+def alexnetgn_supervised_ref13_augset1_1x(pretrained=True, **kwargs):
     """{0}"""
     
     model = _alexnet_gn(out_dim=1000, l2norm=False, **kwargs)
           
     if pretrained:
         checkpoint_name = "alexnet_gn_supervised_final.pth.tar"
-        cache_file_name = "alexnetgn_supervised_augset1_1x_ref13-1ea33cba82.pth.tar"
+        cache_file_name = "alexnetgn_supervised_ref13_augset1_1x-1ea33cba82.pth.tar"
         checkpoint = torch.hub.load_state_dict_from_url(
             url=f'https://visionlab-pretrainedmodels.s3.amazonaws.com/project_instancenet/ipcl/{checkpoint_name}', 
             map_location='cpu',
@@ -364,14 +364,14 @@ def alexnetgn_supervised_augset1_1x_ref13(pretrained=True, **kwargs):
 
 @_docstring_parameter(_doc.format("Ref#14","(alexnet_gn trained on imagenet with category-supervision)",
                                   "ImageNet baseline with new augmentations, Set 2"))
-def alexnetgn_supervised_augset2_ref14(pretrained=True, **kwargs):
+def alexnetgn_supervised_ref14_augset2(pretrained=True, **kwargs):
     """{0}"""
     
     model = _alexnet_gn(out_dim=1000, l2norm=False, **kwargs)
           
     if pretrained:
         checkpoint_name = "alexnet_gn_s1000_imagenet_base_aug3_blur0_rot0_w0_d0_std02_final_weights_only.pth.tar"
-        cache_file_name = "alexnetgn_supervised_augset2_ref14-f9c1603f16.pth.tar"
+        cache_file_name = "alexnetgn_supervised_ref14_augset2-f9c1603f16.pth.tar"
         checkpoint = torch.hub.load_state_dict_from_url(
             url=f'https://visionlab-pretrainedmodels.s3.amazonaws.com/project_instancenet/ipcl/{checkpoint_name}', 
             map_location='cpu',
@@ -389,14 +389,14 @@ def alexnetgn_supervised_augset2_ref14(pretrained=True, **kwargs):
 
 @_docstring_parameter(_doc.format("Ref#15","(alexnet_gn trained on imagenet with category-supervision)",
                                   "ImageNet baseline with new augmentations, Set 2"))
-def alexnetgn_supervised_augset2_rep1_ref15(pretrained=True, **kwargs):
+def alexnetgn_supervised_ref15_augset2_rep1(pretrained=True, **kwargs):
     """{0}"""
     
     model = _alexnet_gn(out_dim=1000, l2norm=False, **kwargs)
           
     if pretrained:
         checkpoint_name = "alexnet_gn_s1000_imagenet_base_aug3_blur0_rot0_w0_d0_std02_rep1_final_weights_only.pth.tar"
-        cache_file_name = "alexnetgn_supervised_augset2_rep1_ref15-5b19b17783.pth.tar"
+        cache_file_name = "alexnetgn_supervised_ref15_augset2_rep1-5b19b17783.pth.tar"
         checkpoint = torch.hub.load_state_dict_from_url(
             url=f'https://visionlab-pretrainedmodels.s3.amazonaws.com/project_instancenet/ipcl/{checkpoint_name}', 
             map_location='cpu',
