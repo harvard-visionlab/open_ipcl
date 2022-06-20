@@ -68,7 +68,7 @@ model, transform = torch.hub.load("harvard-visionlab/open_ipcl", "alexnetgn_supe
 model, transform = torch.hub.load("harvard-visionlab/open_ipcl", "alexnetgn_supervised_ref15_augset2_rep1")
 ```
 
-## Load Pretrained Models
+## Load Pretrained Models from cloned repo
 
 Models are numbered to align with Supplementary Table 1 in our paper [bioRxiv](https://www.biorxiv.org/content/10.1101/2021.05.28.446118v1.full). For example, to load a self-supervised model, trained with IPCL:
 
