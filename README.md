@@ -48,7 +48,7 @@ model, transform = torch.hub.load("harvard-visionlab/open_ipcl", "alexnetgn_ipcl
 model, transform = torch.hub.load("harvard-visionlab/open_ipcl", "alexnetgn_ipcl_ref11_diet_FacesPlacesObjects1281167x3")
 ```
 
-Finally, we trained several category-supervised models for direct comparison to our IPCL models:
+We trained several category-supervised models for direct comparison to our IPCL models.  
 trained on imagent with 5 samples per image (like IPCL), using same augmentsions as IPCL models 1-5:
 ```
 import torch
