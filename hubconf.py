@@ -42,7 +42,7 @@ def _transform(resize=256, crop_size=224, mean=[0.485, 0.456, 0.406], std=[0.229
 #  Official models from published paper
 # -------------------------------------------------
 
-@_docstring_parameter(_doc.format("Ref#1","(alexnet_gn trained on imagenet with instance-prototype-contrastive learning; IPCL)"))
+@_docstring_parameter(_doc.format("Ref#1","(alexnet_gn trained on imagenet with instance-prototype-contrastive learning; IPCL)",""))
 def alexnetgn_ipcl_ref1(pretrained=True, **kwargs):
     """{0}"""
     
@@ -66,7 +66,7 @@ def alexnetgn_ipcl_ref1(pretrained=True, **kwargs):
     
     return model, transform
 
-@_docstring_parameter(_doc.format("Ref#2","(alexnet_gn trained on imagenet with instance-prototype-contrastive learning; IPCL)"))
+@_docstring_parameter(_doc.format("Ref#2","(alexnet_gn trained on imagenet with instance-prototype-contrastive learning; IPCL)",""))
 def alexnetgn_ipcl_ref2(pretrained=True, **kwargs):
     """{0}"""
     
@@ -90,7 +90,7 @@ def alexnetgn_ipcl_ref2(pretrained=True, **kwargs):
     
     return model, transform
 
-@_docstring_parameter(_doc.format("Ref#3","(alexnet_gn trained on imagenet with instance-prototype-contrastive learning; IPCL)"))
+@_docstring_parameter(_doc.format("Ref#3","(alexnet_gn trained on imagenet with instance-prototype-contrastive learning; IPCL)",""))
 def alexnetgn_ipcl_ref3(pretrained=True, **kwargs):
     """{0}"""
     
@@ -114,7 +114,7 @@ def alexnetgn_ipcl_ref3(pretrained=True, **kwargs):
     
     return model, transform
 
-@_docstring_parameter(_doc.format("Ref#4","(alexnet_gn trained on imagenet with instance-prototype-contrastive learning; IPCL)"))
+@_docstring_parameter(_doc.format("Ref#4","(alexnet_gn trained on imagenet with instance-prototype-contrastive learning; IPCL)",""))
 def alexnetgn_ipcl_ref4(pretrained=True, **kwargs):
     """{0}"""
     
@@ -138,7 +138,7 @@ def alexnetgn_ipcl_ref4(pretrained=True, **kwargs):
     
     return model, transform
 
-@_docstring_parameter(_doc.format("Ref#5","(alexnet_gn trained on imagenet with instance-prototype-contrastive learning; IPCL)"))
+@_docstring_parameter(_doc.format("Ref#5","(alexnet_gn trained on imagenet with instance-prototype-contrastive learning; IPCL)",""))
 def alexnetgn_ipcl_ref5(pretrained=True, **kwargs):
     """{0}"""
     
@@ -162,7 +162,8 @@ def alexnetgn_ipcl_ref5(pretrained=True, **kwargs):
     
     return model, transform
 
-@_docstring_parameter(_doc.format("Ref#6","(alexnet_gn trained on imagenet with IPCL; visual-diet variation set)","trained with reduced range of random-resize-crop range"))
+@_docstring_parameter(_doc.format("Ref#6","(alexnet_gn trained on imagenet with IPCL; visual-diet variation set)",
+                                  "trained with reduced range of random-resize-crop range"))
 def alexnetgn_ipcl_diet_imagenet_ref6(pretrained=True, **kwargs):
     """{0}"""
     
@@ -186,7 +187,8 @@ def alexnetgn_ipcl_diet_imagenet_ref6(pretrained=True, **kwargs):
     
     return model, transform
 
-@_docstring_parameter(_doc.format("Ref#7","(alexnet_gn trained on OpenImagesV6 with IPCL; visual-diet variation set)","trained with reduced range of random-resize-crop range"))
+@_docstring_parameter(_doc.format("Ref#7","(alexnet_gn trained on OpenImagesV6 with IPCL; visual-diet variation set)",
+                                  "trained with reduced range of random-resize-crop range"))
 def alexnetgn_ipcl_diet_openimagesv6_ref7(pretrained=True, **kwargs):
     """{0}"""
     
@@ -210,7 +212,8 @@ def alexnetgn_ipcl_diet_openimagesv6_ref7(pretrained=True, **kwargs):
     
     return model, transform
 
-@_docstring_parameter(_doc.format("Ref#8","(alexnet_gn trained on Places2 with IPCL; visual-diet variation set)","trained with reduced range of random-resize-crop range"))
+@_docstring_parameter(_doc.format("Ref#8","(alexnet_gn trained on Places2 with IPCL; visual-diet variation set)",
+                                  "trained with reduced range of random-resize-crop range"))
 def alexnetgn_ipcl_diet_places2_ref8(pretrained=True, **kwargs):
     """{0}"""
     
@@ -234,7 +237,8 @@ def alexnetgn_ipcl_diet_places2_ref8(pretrained=True, **kwargs):
     
     return model, transform
 
-@_docstring_parameter(_doc.format("Ref#9","(alexnet_gn trained on VGGFace2 with IPCL; visual-diet variation set)","trained with reduced range of random-resize-crop range"))
+@_docstring_parameter(_doc.format("Ref#9","(alexnet_gn trained on VGGFace2 with IPCL; visual-diet variation set)",
+                                  "trained with reduced range of random-resize-crop range"))
 def alexnetgn_ipcl_diet_vggface2_ref9(pretrained=True, **kwargs):
     """{0}"""
     
@@ -258,7 +262,8 @@ def alexnetgn_ipcl_diet_vggface2_ref9(pretrained=True, **kwargs):
     
     return model, transform
 
-@_docstring_parameter(_doc.format("Ref#10","(alexnet_gn trained on FacesPlacesObjects1281167 with IPCL; visual-diet variation set)","trained with reduced range of random-resize-crop range"))
+@_docstring_parameter(_doc.format("Ref#10","(alexnet_gn trained on FacesPlacesObjects1281167 with IPCL; visual-diet variation set)",
+                                  "trained with reduced range of random-resize-crop range"))
 def alexnetgn_ipcl_diet_FacesPlacesObjects1281167_ref10(pretrained=True, **kwargs):
     """{0}"""
     
@@ -282,7 +287,8 @@ def alexnetgn_ipcl_diet_FacesPlacesObjects1281167_ref10(pretrained=True, **kwarg
     
     return model, transform
 
-@_docstring_parameter(_doc.format("Ref#11","(alexnet_gn trained on FacesPlacesObjects1281167 with IPCL; visual-diet variation set)","trained with reduced range of random-resize-crop range"))
+@_docstring_parameter(_doc.format("Ref#11","(alexnet_gn trained on FacesPlacesObjects1281167 with IPCL; visual-diet variation set)",
+                                  "trained with reduced range of random-resize-crop range"))
 def alexnetgn_ipcl_diet_FacesPlacesObjects1281167x3_ref11(pretrained=True, **kwargs):
     """{0}"""
     
@@ -306,7 +312,8 @@ def alexnetgn_ipcl_diet_FacesPlacesObjects1281167x3_ref11(pretrained=True, **kwa
     
     return model, transform
 
-@_docstring_parameter(_doc.format("Ref#12","(alexnet_gn trained on imagenet with category-supervision)","trained with 5 augmentations per image to match IPCL, Aug Set 1"))
+@_docstring_parameter(_doc.format("Ref#12","(alexnet_gn trained on imagenet with category-supervision)",
+                                  "trained with 5 augmentations per image to match IPCL, Aug Set 1"))
 def alexnetgn_supervised_augset1_5x_ref12(pretrained=True, **kwargs):
     """{0}"""
     
@@ -330,7 +337,8 @@ def alexnetgn_supervised_augset1_5x_ref12(pretrained=True, **kwargs):
     
     return model, transform
 
-@_docstring_parameter(_doc.format("Ref#13","(alexnet_gn trained on imagenet with category-supervision)","trained with standard single augmentation per image, Aug Set 1"))
+@_docstring_parameter(_doc.format("Ref#13","(alexnet_gn trained on imagenet with category-supervision)",
+                                  "trained with standard single augmentation per image, Aug Set 1"))
 def alexnetgn_supervised_augset1_1x_ref13(pretrained=True, **kwargs):
     """{0}"""
     
@@ -354,7 +362,8 @@ def alexnetgn_supervised_augset1_1x_ref13(pretrained=True, **kwargs):
     
     return model, transform
 
-@_docstring_parameter(_doc.format("Ref#14","(alexnet_gn trained on imagenet with category-supervision)","ImageNet baseline with new augmentations, Set 2"))
+@_docstring_parameter(_doc.format("Ref#14","(alexnet_gn trained on imagenet with category-supervision)",
+                                  "ImageNet baseline with new augmentations, Set 2"))
 def alexnetgn_supervised_augset2_ref14(pretrained=True, **kwargs):
     """{0}"""
     
@@ -378,7 +387,8 @@ def alexnetgn_supervised_augset2_ref14(pretrained=True, **kwargs):
     
     return model, transform
 
-@_docstring_parameter(_doc.format("Ref#15","(alexnet_gn trained on imagenet with category-supervision)","ImageNet baseline with new augmentations, Set 2"))
+@_docstring_parameter(_doc.format("Ref#15","(alexnet_gn trained on imagenet with category-supervision)",
+                                  "ImageNet baseline with new augmentations, Set 2"))
 def alexnetgn_supervised_augset2_rep1_ref15(pretrained=True, **kwargs):
     """{0}"""
     
