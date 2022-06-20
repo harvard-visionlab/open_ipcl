@@ -18,6 +18,56 @@
 ## System Requirements
 This code has been tested with python=3.6, and PyTorch v1.7 and 1.9. See conda_env.ipynb for notes on environment setup, or use the environment.yml file to install a new conda environment with all dependencies.
 
+## Load Pretrained Models with torch.hub
+
+Models are numbered to align with Supplementary Table 1 in our paper [bioRxiv](https://www.biorxiv.org/content/10.1101/2021.05.28.446118v1.full). For example, to load a self-supervised model, trained with IPCL:
+
+load an AlexnetGN model trained on imagenet:
+```
+import torch
+model, transform = torch.hub.load("harvard-visionlab/open_ipcl", "alexnetgn_ipcl_ref01")
+```
+
+load one of several replications, with variations in code-base and training recipe:
+```
+import torch
+model, transform = torch.hub.load("harvard-visionlab/open_ipcl", "alexnetgn_ipcl_ref02")
+model, transform = torch.hub.load("harvard-visionlab/open_ipcl", "alexnetgn_ipcl_ref03")
+model, transform = torch.hub.load("harvard-visionlab/open_ipcl", "alexnetgn_ipcl_ref04")
+model, transform = torch.hub.load("harvard-visionlab/open_ipcl", "alexnetgn_ipcl_ref05")
+```
+
+We trained IPCL models on different datsets, using a differet augmentation scheme (to make a fair comparison across datasets). These models generally performed less well on imagenet linear classification:
+```
+import torch
+model, transform = torch.hub.load("harvard-visionlab/open_ipcl", "alexnetgn_ipcl_ref06_diet_imagenet")
+model, transform = torch.hub.load("harvard-visionlab/open_ipcl", "alexnetgn_ipcl_ref07_diet_openimagesv6")
+model, transform = torch.hub.load("harvard-visionlab/open_ipcl", "alexnetgn_ipcl_ref08_diet_places2")
+model, transform = torch.hub.load("harvard-visionlab/open_ipcl", "alexnetgn_ipcl_ref09_diet_vggface2")
+model, transform = torch.hub.load("harvard-visionlab/open_ipcl", "alexnetgn_ipcl_ref10_diet_FacesPlacesObjects1281167")
+model, transform = torch.hub.load("harvard-visionlab/open_ipcl", "alexnetgn_ipcl_ref11_diet_FacesPlacesObjects1281167x3")
+```
+
+Finally, we trained several category-supervised models for direct comparison to our IPCL models:
+trained on imagent with 5 samples per image (like IPCL), using same augmentsions as IPCL models 1-5:
+```
+import torch
+model, transform = torch.hub.load("harvard-visionlab/open_ipcl", "alexnetgn_supervised_ref12_augset1_5x")
+```
+
+or a single sample per image (as is standard), using same augmentsions as IPCL models 1-5:
+```
+import torch
+model, transform = torch.hub.load("harvard-visionlab/open_ipcl", "alexnetgn_supervised_ref13_augset1_1x")
+```
+
+Finally, two category-supervised models trained on imagenet, using the augmentations used in our visual-diet manipulation (IPCL models 6-11):
+```
+import torch
+model, transform = torch.hub.load("harvard-visionlab/open_ipcl", "alexnetgn_supervised_ref14_augset2")
+model, transform = torch.hub.load("harvard-visionlab/open_ipcl", "alexnetgn_supervised_ref15_augset2_rep1")
+```
+
 ## Load Pretrained Models
 
 Models are numbered to align with Supplementary Table 1 in our paper [bioRxiv](https://www.biorxiv.org/content/10.1101/2021.05.28.446118v1.full). For example, to load a self-supervised model, trained with IPCL:
