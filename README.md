@@ -20,15 +20,15 @@ This code has been tested with python=3.6, and PyTorch v1.7 and 1.9. See conda_e
 
 ## Load Pretrained Models with torch.hub
 
-Models are numbered to align with Supplementary Table 1 in our paper [bioRxiv](https://www.biorxiv.org/content/10.1101/2021.05.28.446118v1.full). For example, to load a self-supervised model, trained with IPCL:
+Models are numbered to align with Supplementary Table 1 in our paper [bioRxiv](https://www.biorxiv.org/content/10.1101/2021.05.28.446118v1.full). 
 
-load an AlexnetGN model trained on imagenet:
+load an AlexnetGN model trained on imagenet with IPCL:
 ```
 import torch
 model, transform = torch.hub.load("harvard-visionlab/open_ipcl", "alexnetgn_ipcl_ref01")
 ```
 
-load one of several replications, with variations in code-base and training recipe:
+load one of several IPCL replications, with variations in code-base and training recipe:
 ```
 import torch
 model, transform = torch.hub.load("harvard-visionlab/open_ipcl", "alexnetgn_ipcl_ref02")
