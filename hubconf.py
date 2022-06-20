@@ -108,4 +108,52 @@ def alexnetgn_ipcl_ref3(pretrained=True, **kwargs):
     transform = _transform(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
     
     return model, transform
+
+@_docstring_parameter(_doc.format("Ref#4","(alexnet_gn trained on imagenet with instance-prototype-contrastive learning; IPCL)"))
+def alexnetgn_ipcl_ref4(pretrained=True, **kwargs):
+    """{0}"""
+    
+    model = _alexnet_gn(out_dim=128, l2norm=True, **kwargs)
+          
+    if pretrained:
+        checkpoint_name = "alexnet_gn_dim128_unsupervised_ranger_checkpoint_weights_only.pth.tar"
+        cache_file_name = "alexnetgn_ipcl_ref4-e8d0736300.pth.tar"
+        checkpoint = torch.hub.load_state_dict_from_url(
+            url=f'https://visionlab-pretrainedmodels.s3.amazonaws.com/project_instancenet/ipcl/{checkpoint_name}', 
+            map_location='cpu',
+            file_name=cache_file_name,
+            check_hash=True
+        )
+        state_dict = {str.replace(k,'module.',''): v for k,v in checkpoint['state_dict'].items()}
+        model.load_state_dict(state_dict, strict=True)
+        model.hashid = 'e8d0736300'
+        model.weights_file = os.path.join(torch.hub.get_dir(), "checkpoints", cache_file_name)
+    
+    transform = _transform(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+    
+    return model, transform
+
+@_docstring_parameter(_doc.format("Ref#5","(alexnet_gn trained on imagenet with instance-prototype-contrastive learning; IPCL)"))
+def alexnetgn_ipcl_ref5(pretrained=True, **kwargs):
+    """{0}"""
+    
+    model = _alexnet_gn(out_dim=128, l2norm=True, **kwargs)
+          
+    if pretrained:
+        checkpoint_name = "alexnet_gn_dim128_unsupervised_transforms_checkpoint_weights_only.pth.tar"
+        cache_file_name = "alexnetgn_ipcl_ref5-d06507981d.pth.tar"
+        checkpoint = torch.hub.load_state_dict_from_url(
+            url=f'https://visionlab-pretrainedmodels.s3.amazonaws.com/project_instancenet/ipcl/{checkpoint_name}', 
+            map_location='cpu',
+            file_name=cache_file_name,
+            check_hash=True
+        )
+        state_dict = {str.replace(k,'module.',''): v for k,v in checkpoint['state_dict'].items()}
+        model.load_state_dict(state_dict, strict=True)
+        model.hashid = 'd06507981d'
+        model.weights_file = os.path.join(torch.hub.get_dir(), "checkpoints", cache_file_name)
+    
+    transform = _transform(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+    
+    return model, transform
   
