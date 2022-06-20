@@ -30,7 +30,7 @@ def alexnetgn_ipcl_ref1(pretrained=True, **kwargs):
         
     """
     
-    model = alexnet_gn(out_dim=128, l2norm=True)
+    model = _alexnet_gn(out_dim=128, l2norm=True)
           
     if pretrained:
         checkpoint_name = "06_instance_imagenet_AlexNet_n5_lr03_pct40_t07_div1000_e100_bs128_bm20_gn_stack_final_weights_only.pth.tar"
