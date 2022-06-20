@@ -2,7 +2,7 @@ import os
 import torch
 import torchvision
 
-from models.alexnet_gn import alexnet_gn as _alexnet_gn
+import models.alexnet_gn as _alexnet_gn
 import models.resnet import as _resnet
 
 dependencies = ['torch', 'torchvision']
