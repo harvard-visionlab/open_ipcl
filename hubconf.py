@@ -20,7 +20,7 @@ def _transform(resize=256, crop_size=224, mean=[0.485, 0.456, 0.406], std=[0.229
 def alexnetgn_ipcl_ref1(pretrained=True, **kwargs):
     """Official ipcl imagenet model from the paper `A self-supervised domain-general learning framework for human ventral stream representation <https://github.com/grez72/publications/blob/master/pdfs/Konkle_et_al-2022-Nature_Communications.pdf>`.    
     
-    This model instance corresponds Supplementary Table Ref#1 (alexnet_gn trained on imagenet with instance-prototype-contrastive learning; IPCL).
+    This model instance corresponds to Supplementary Table Ref#1 (alexnet_gn trained on imagenet with instance-prototype-contrastive learning; IPCL).
     
     Args:
         pretrained (bool): whether to load pre-trained weights
