@@ -292,7 +292,7 @@ def alexnetgn_ipcl_ref10_diet_FacesPlacesObjects1281167(pretrained=True, **kwarg
     
     return model, transform
 
-@_docstring_parameter(_doc.format("Ref#11","(alexnet_gn trained on FacesPlacesObjects1281167 with IPCL; visual-diet variation set)",
+@_docstring_parameter(_doc.format("Ref#11","(alexnet_gn trained on FacesPlacesObjects1281167x3 with IPCL; visual-diet variation set)",
                                   "trained with reduced range of random-resize-crop range"))
 def alexnetgn_ipcl_ref11_diet_FacesPlacesObjects1281167x3(pretrained=True, **kwargs):
     """{0}"""
